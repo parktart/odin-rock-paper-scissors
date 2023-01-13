@@ -24,14 +24,18 @@ function getComputerChoice() {
 Evaluate a single round of rock paper scissors and return win/lose result
 */
 function playSingleRound(playerSelection, computerSelection) {
-  if (playerSelection.toLowerCase() === computerSelection) return "It's a tie! Try again"
-  else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") return "You win! Rock beats Scissors";
-  else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") return "You win! Paper beats Rock";
-  else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") return "You win! Scissors beats Paper";
-  else if (computerSelection === "rock" && playerSelection.toLowerCase() === "scissors") return "You lose! Rock beats Scissors";
-  else if (computerSelection === "paper" && playerSelection.toLowerCase() === "rock") return "You lose! Paper beats Rock";
-  else if (computerSelection === "scissors" && playerSelection.toLowerCase() === "paper") return "You lose! Scissors beats Paper";
-  else return "An error occurred"
+  if (playerSelection === null) {
+    return "Canceled";
+  } else {
+      if (playerSelection.toLowerCase() === computerSelection) return "It's a tie! Try again"
+      else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") return "You win! Rock beats Scissors";
+      else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") return "You win! Paper beats Rock";
+      else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") return "You win! Scissors beats Paper";
+      else if (computerSelection === "rock" && playerSelection.toLowerCase() === "scissors") return "You lose! Rock beats Scissors";
+      else if (computerSelection === "paper" && playerSelection.toLowerCase() === "rock") return "You lose! Paper beats Rock";
+      else if (computerSelection === "scissors" && playerSelection.toLowerCase() === "paper") return "You lose! Scissors beats Paper";
+      else return "Please enter either rock, paper, or scissors"
+  }
 }
 
 
