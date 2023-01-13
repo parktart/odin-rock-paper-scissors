@@ -2,8 +2,10 @@
 let playerChoice;
 let computerChoice;
 
-playerChoice = "rOck";
-computerChoice = getComputerChoice();
+let playerScore = 0;
+let computerScore = 0;
+
+console.log(game());
 
 
 /*
@@ -33,18 +35,42 @@ function playSingleRound(playerSelection, computerSelection) {
 }
 
 
+/*
+Play five rounds and return the overall winner/loser
+*/
+function game() {
+  while (playerScore + computerScore < 5) {
+    playerChoice = prompt("enter rock paper or scissors");
+    computerChoice = getComputerChoice();
+    let roundResult = playSingleRound(playerChoice, computerChoice);
+    console.log(roundResult);
+    if (roundResult.includes("win")) {
+      playerScore++;
+      console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
+    } else if (roundResult.includes("lose")) {
+      computerScore++;
+      console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
+    }
+  }
+  if (playerScore > computerScore) return "YOU WON"
+  else return "YOU LOST"
+}
+
+
+
+
 
 
 console.log(
-  playerChoice
+  
 );
 
 console.log(
-  computerChoice
+  
 );
 
 console.log(
-  playSingleRound(playerChoice, computerChoice)
+  
 );
 
 console.log(
