@@ -5,13 +5,13 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
-let roundResult = "";
+let roundResult = ""; // Needed so that roundResult.includes("quit program") can be evaluated
 
-console.log(game());
+console.log(game());  // Run the program
 
 
 /*
-Generate and return a new choice for the computer - rock, paper, or scissors
+Generate and return a new computer choice - rock, paper, or scissors
 */
 function getComputerChoice() {
   let randNum = Math.floor(Math.random()*3) + 1; // Random number - either 1 2 or 3
@@ -86,3 +86,6 @@ console.log(
   
 
 
+ // if (playerChoice === "quit") {
+      // return "User quit program";
+    // }
