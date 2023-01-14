@@ -26,7 +26,6 @@ Evaluate a single round of rock paper scissors and return win/lose result
 */
 function playSingleRound(playerSelection, computerSelection) {
   if (playerSelection === null) return "Prompt Canceled - enter 'quit' to exit program"
-  else if (playerSelection.toLowerCase() === "quit") return "User quit program"
   else if (playerSelection.toLowerCase() === computerSelection) return "It's a tie! Try again"
   else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") return "You win! Rock beats Scissors";
   else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") return "You win! Paper beats Rock";
@@ -41,8 +40,11 @@ function playSingleRound(playerSelection, computerSelection) {
 Play five rounds and return the overall winner/loser
 */
 function game() {
-  while (playerScore + computerScore < 5 && !(roundResult.includes("quit program"))) {
+  while (playerScore + computerScore < 5) {
     playerChoice = prompt("enter rock paper or scissors");
+    if (playerChoice === "quit") {
+      return "User quit program";
+    }
     computerChoice = getComputerChoice();
     roundResult = playSingleRound(playerChoice, computerChoice);
     console.log(roundResult);
@@ -54,8 +56,7 @@ function game() {
       console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
     }
   }
-  if (roundResult.includes("quit program")) return "bye bye"
-  else if (playerScore > computerScore) return "YOU WON"
+  if (playerScore > computerScore) return "YOU WON"
   else return "YOU LOST"
 }
 
@@ -85,7 +86,3 @@ console.log(
 );
   
 
-
- // if (playerChoice === "quit") {
-      // return "User quit program";
-    // }
