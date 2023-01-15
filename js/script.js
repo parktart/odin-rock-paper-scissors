@@ -1,6 +1,6 @@
+"use strict";
 
 console.log(game());  // Run the program
-
 
 /*
 Generate and return a new computer choice - rock, paper, or scissors
