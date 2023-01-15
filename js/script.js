@@ -17,13 +17,14 @@ function getComputerChoice() {
 Evaluate a single round of rock paper scissors and return win/lose result
 */
 function playSingleRound(playerSelection, computerSelection) {
-  return (playerSelection.toLowerCase() === computerSelection) ? "It's a tie! Try again"
-  : (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") ? "You win! Rock beats Scissors"
-  : (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") ? "You win! Paper beats Rock"
-  : (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") ? "You win! Scissors beats Paper"
-  : (computerSelection === "rock" && playerSelection.toLowerCase() === "scissors") ? "You lose! Rock beats Scissors"
-  : (computerSelection === "paper" && playerSelection.toLowerCase() === "rock") ? "You lose! Paper beats Rock"
-  : (computerSelection === "scissors" && playerSelection.toLowerCase() === "paper") ? "You lose! Scissors beats Paper"
+  let playerSelectionLC = playerSelection.toLowerCase();
+  return (playerSelectionLC === computerSelection) ? "It's a tie! Try again"
+  : (playerSelectionLC === "rock" && computerSelection === "scissors") ? "You win! Rock beats Scissors"
+  : (playerSelectionLC === "paper" && computerSelection === "rock") ? "You win! Paper beats Rock"
+  : (playerSelectionLC === "scissors" && computerSelection === "paper") ? "You win! Scissors beats Paper"
+  : (computerSelection === "rock" && playerSelectionLC === "scissors") ? "You lose! Rock beats Scissors"
+  : (computerSelection === "paper" && playerSelectionLC === "rock") ? "You lose! Paper beats Rock"
+  : (computerSelection === "scissors" && playerSelectionLC === "paper") ? "You lose! Scissors beats Paper"
   : "Please enter either rock, paper, or scissors";
 }
 
