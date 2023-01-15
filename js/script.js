@@ -17,8 +17,7 @@ function getComputerChoice() {
 Evaluate a single round of rock paper scissors and return win/lose result
 */
 function playSingleRound(playerSelection, computerSelection) {
-  if (playerSelection === null) return "Prompt Canceled - enter 'quit' to exit program"
-  else if (playerSelection.toLowerCase() === computerSelection) return "It's a tie! Try again"
+  if (playerSelection.toLowerCase() === computerSelection) return "It's a tie! Try again"
   else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") return "You win! Rock beats Scissors";
   else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") return "You win! Paper beats Rock";
   else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") return "You win! Scissors beats Paper";
@@ -39,18 +38,21 @@ function game() {
   let computerScore = 0;
   while (playerScore < 3 && computerScore < 3) {
     playerChoice = prompt("enter rock paper or scissors");
-    if (playerChoice.toLowerCase() === "quit") {
+    if (playerChoice === null) {
+      console.log("Prompt Canceled - enter 'quit' to exit program");
+    } else if (playerChoice.toLowerCase() === "quit") {
       return "User quit program";
-    }
-    computerChoice = getComputerChoice();
-    roundResult = playSingleRound(playerChoice, computerChoice);
-    console.log(roundResult);
-    if (roundResult.includes("win")) {
-      playerScore++;
-      console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
-    } else if (roundResult.includes("lose")) {
-      computerScore++;
-      console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
+    } else {
+      computerChoice = getComputerChoice();
+      roundResult = playSingleRound(playerChoice, computerChoice);
+      console.log(roundResult);
+      if (roundResult.includes("win")) {
+        playerScore++;
+        console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
+      } else if (roundResult.includes("lose")) {
+        computerScore++;
+        console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
+      }
     }
   }
   if (playerScore > computerScore) return "YOU WON"
