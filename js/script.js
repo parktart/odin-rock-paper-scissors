@@ -5,8 +5,6 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
-let roundResult = ""; // Needed so that roundResult.includes("quit program") can be evaluated
-
 console.log(game());  // Run the program
 
 
@@ -46,7 +44,7 @@ function game() {
       return "User quit program";
     }
     computerChoice = getComputerChoice();
-    roundResult = playSingleRound(playerChoice, computerChoice);
+    let roundResult = playSingleRound(playerChoice, computerChoice);
     console.log(roundResult);
     if (roundResult.includes("win")) {
       playerScore++;
