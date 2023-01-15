@@ -39,7 +39,7 @@ function game() {
   let computerScore = 0;
   while (playerScore < 3 && computerScore < 3) {
     playerChoice = prompt("enter rock paper or scissors");
-    if (playerChoice === "quit") {
+    if (playerChoice.toLocaleLowerCase() === "quit") {
       return "User quit program";
     }
     computerChoice = getComputerChoice();
