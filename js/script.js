@@ -38,7 +38,7 @@ function playSingleRound(playerSelection, computerSelection) {
 Play five rounds and return the overall winner/loser
 */
 function game() {
-  while (playerScore + computerScore < 5) {
+  while (playerScore < 3 && computerScore < 3) {
     playerChoice = prompt("enter rock paper or scissors");
     if (playerChoice === "quit") {
       return "User quit program";
