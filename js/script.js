@@ -1,10 +1,4 @@
 
-let playerChoice;
-let computerChoice;
-
-let playerScore = 0;
-let computerScore = 0;
-
 console.log(game());  // Run the program
 
 
@@ -38,13 +32,18 @@ function playSingleRound(playerSelection, computerSelection) {
 Play five rounds and return the overall winner/loser
 */
 function game() {
+  let playerChoice = "";
+  let computerChoice = "";
+  let roundResult = "";
+  let playerScore = 0;
+  let computerScore = 0;
   while (playerScore < 3 && computerScore < 3) {
     playerChoice = prompt("enter rock paper or scissors");
     if (playerChoice === "quit") {
       return "User quit program";
     }
     computerChoice = getComputerChoice();
-    let roundResult = playSingleRound(playerChoice, computerChoice);
+    roundResult = playSingleRound(playerChoice, computerChoice);
     console.log(roundResult);
     if (roundResult.includes("win")) {
       playerScore++;
