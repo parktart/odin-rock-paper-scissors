@@ -10,7 +10,7 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    console.log(playSingleRound(e.target.classList.value, getComputerChoice()));
+    console.log(playSingleRound(e.target.textContent, getComputerChoice()));
   })
 });
 
