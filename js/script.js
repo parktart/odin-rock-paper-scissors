@@ -1,7 +1,26 @@
 "use strict";
 
+// const rockBtn = document.querySelector("button.rock");
+// const paperBtn = document.querySelector("button.paper");
+// const scisBtn = document.querySelector("button.scissors");
+
+
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    console.log(playSingleRound(e.target.classList.value, getComputerChoice()));
+  })
+});
+
+
+
+
+
+
 // console.log(game());  // Run the program
-console.log(playSingleRound("rock", getComputerChoice()));
+// console.log(playSingleRound("rock", getComputerChoice()));
 
 /*
 Generate and return a new computer choice - rock, paper, or scissors
