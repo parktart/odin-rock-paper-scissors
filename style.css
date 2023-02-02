@@ -1,0 +1,59 @@
+*, *::before, *::after {
+  box-sizing: border-box;  /* Alternative Box Model */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit; /* wipe all User Agent fonts, sizes, and weights */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  /* color: rgb(42, 43, 42); */
+  color: white;
+  background-color: black;
+  min-height: 100vh;
+}
+
+img, picture, svg, video {
+  display: block; /* remove the small whitespace that renders under each */
+  max-width: 100%; /* allow to shrink with its container when forced */
+  height: auto;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+.margin-auto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid red;
+}
+
+.wrap {
+  display: flex;
+  gap: 20px;
+  border: 2px solid blue;
+}
+
+button {
+  width: 120px;
+}
