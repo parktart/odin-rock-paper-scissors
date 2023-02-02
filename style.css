@@ -39,13 +39,15 @@ button:active {
 }
 
 .margin-auto-container {
+  border: 2px solid red;
   max-width: 1200px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid red;
+  justify-content: center;
 }
 
 .wrap {
@@ -53,9 +55,9 @@ button:active {
 }
 
 .buttons.wrap {
+  border: 2px solid blue;
   gap: 20px;
   margin-bottom: 30px;
-  border: 2px solid blue;
 }
 
 button {
@@ -63,6 +65,20 @@ button {
 }
 
 .display.wrap {
-  font-size: 20px;
   border: 2px solid orange;  
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.score.wrap {
+  border: 2px solid blue;
+}
+
+.score.wrap > div {
+  border: 2px solid red;
+  width: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

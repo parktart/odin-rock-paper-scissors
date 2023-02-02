@@ -8,7 +8,8 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    console.log(playSingleRound(e.target.textContent, getComputerChoice()));
+    playSingleRound(e.target.textContent, getComputerChoice());
+    updateScore();
   })
 });
 
@@ -21,7 +22,7 @@ function getComputerChoice() {
   return (randNum === 1) ? "rock"
   : (randNum === 2) ? "paper"
   : (randNum === 3) ? "scissors"
-  : "An error occurred";
+  : console.log("error");
 }
 
 
@@ -39,10 +40,31 @@ function playSingleRound(playerSelection, computerSelection) {
   : (computerSelection === "rock" && playerSelectionLC === "scissors") ? "You lose! Rock beats Scissors"
   : (computerSelection === "paper" && playerSelectionLC === "rock") ? "You lose! Paper beats Rock"
   : (computerSelection === "scissors" && playerSelectionLC === "paper") ? "You lose! Scissors beats Paper"
-  : "Please select either rock, paper, or scissors";
+  : console.log("error");
 }
 
 
+/*
+track and display score
+*/
+let playerScore = 0;
+let computerScore = 0;
+
+const playerScoreBoard = document.querySelector("div.player > p");
+const computerScoreBoard = document.querySelector("div.computer > p");
+
+function updateScore() {
+  let roundResult = displayDiv.textContent;
+  if (roundResult.includes("win")) {
+    playerScore++;
+    playerScoreBoard.textContent = playerScore;
+  } else if (roundResult.includes("lose")) {
+    computerScore++;
+    computerScoreBoard.textContent = computerScore;
+  }
+  if (playerScore === 5) return "YOU WON"
+  else if (computerScore === 5) return "YOU LOST"
+}
 
 
 
