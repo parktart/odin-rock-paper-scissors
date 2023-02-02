@@ -1,6 +1,7 @@
 "use strict";
 
-console.log(game());  // Run the program
+// console.log(game());  // Run the program
+console.log(playSingleRound("rock", getComputerChoice()));
 
 /*
 Generate and return a new computer choice - rock, paper, or scissors
@@ -28,37 +29,7 @@ function playSingleRound(playerSelection, computerSelection) {
   : "Please enter either rock, paper, or scissors";
 }
 
-/*
-Play five rounds and return the overall winner/loser
-*/
-function game() {
-  let playerChoice = "";
-  let computerChoice = "";
-  let roundResult = "";
-  let playerScore = 0;
-  let computerScore = 0;
-  while (playerScore < 3 && computerScore < 3) {
-    playerChoice = prompt("enter rock paper or scissors");
-    if (playerChoice === null) {
-      console.log("Prompt Canceled - enter 'quit' to exit program");
-    } else if (playerChoice.toLowerCase() === "quit") {
-      return "User quit program";
-    } else {
-      computerChoice = getComputerChoice();
-      roundResult = playSingleRound(playerChoice, computerChoice);
-      console.log(roundResult);
-      if (roundResult.includes("win")) {
-        playerScore++;
-        console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
-      } else if (roundResult.includes("lose")) {
-        computerScore++;
-        console.log(`The score is ${playerScore} (player) vs ${computerScore} (computer)`);
-      }
-    }
-  }
-  if (playerScore > computerScore) return "YOU WON"
-  else return "YOU LOST"
-}
+
 
 
 
