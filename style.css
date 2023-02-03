@@ -58,6 +58,11 @@ button:active {
   margin-bottom: 30px;
 }
 
+.title.wrap {
+  font-family: 'Knewave', cursive;
+  font-size: 48px;
+}
+
 .buttons.wrap {
   gap: 20px;
 }
