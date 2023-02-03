@@ -3,21 +3,34 @@
 const buttons = document.querySelectorAll(".buttons > button");
 const resultDiv = document.querySelector("div.result");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    const playerChoice = e.target.textContent;
-    const computerChoice = getComputerChoice();
-    const roundResult = playSingleRound(playerChoice, computerChoice);
+addListeners();
 
-    resultDiv.textContent = roundResult;
-    updateScore(roundResult);
-    const winner = checkForWinner();
-    if (winner) {
-      displayWinner(winner);
-      addResetBtn();
-    }
-  })
-});
+function addListeners() {
+  buttons.forEach((button) => {
+    button.addEventListener("click", playSingleRound)
+  });
+}
+
+function removeListeners() {
+  buttons.forEach((button) => {
+    button.removeEventListener("click", playSingleRound);
+  });
+}
+
+function playSingleRound(e) {
+  const playerChoice = e.target.textContent;
+  const computerChoice = getComputerChoice();
+  const roundResult = getRoundResult(playerChoice, computerChoice);
+
+  resultDiv.textContent = roundResult;
+  updateScore(roundResult);
+  const winner = checkForWinner();
+  if (winner) {
+    displayWinner(winner);
+    addResetBtn();
+    removeListeners();
+  }
+}
 
 /*
 Generate and return a new computer choice - rock, paper, or scissors
@@ -33,7 +46,7 @@ function getComputerChoice() {
 /*
 Evaluate a single round of rock paper scissors and return win/lose result
 */
-function playSingleRound(playerSelection, computerSelection) {
+function getRoundResult(playerSelection, computerSelection) {
   let playerSelectionLC = playerSelection.toLowerCase();
   return (playerSelectionLC === computerSelection) ? "It's a tie! Try again"
   : (playerSelectionLC === "rock" && computerSelection === "scissors") ? "You win! Rock beats Scissors"
@@ -104,6 +117,7 @@ function reset() {
   resultDiv.textContent = "Choose your weapon!";
   winnerDiv.textContent = "";
   resetBtn.style.display = "none";
+  addListeners();
 }
 
 
