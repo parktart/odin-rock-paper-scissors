@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   font: inherit; /* wipe all User Agent fonts, sizes, and weights */
+  color: inherit;
+  background-color: inherit;
 }
 
 body {
@@ -13,7 +15,7 @@ body {
   /* color: rgb(42, 43, 42); */
   color: white;
   background-color: black;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 img, picture, svg, video {
@@ -51,13 +53,13 @@ button:active {
 }
 
 .wrap {
+  border: 2px solid blue;
   display: flex;
+  margin-bottom: 30px;
 }
 
 .buttons.wrap {
-  border: 2px solid blue;
   gap: 20px;
-  margin-bottom: 30px;
 }
 
 button {
@@ -65,14 +67,11 @@ button {
 }
 
 .display.wrap {
-  border: 2px solid orange;  
-  font-size: 20px;
-  margin-bottom: 30px;
+  font-size: 1.25rem; /* 20px */
 }
 
 .score.wrap {
-  border: 2px solid blue;
-  margin-bottom: 30px;
+  /* margin-bottom: XXX; */
 }
 
 .score.wrap > div {
@@ -85,7 +84,49 @@ button {
 }
 
 .final-result.wrap {
-  border: 2px solid orange;  
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px */
   font-weight: bold;
 }
+
+
+
+
+
+/* CSS text-shadow
+	text-shadow: 3px 3px 1px #bebebe;
+   CSS box-shadow
+	box-shadow: 6px 6px 5px 0 #bebebe;
+visualize/manipulate both of these in DevTools!   
+
+  CSS transition-timing-function
+  CSS animation-timing-function
+*/
+
+/*
+
+@media screen and (max-width: 1160px) {
+  
+  .disappear {
+    display: none;
+  }
+   
+  .appear {
+    display: block;
+  }
+}
+
+
+pixels = rem = User Agent Stylesheet (chrome)
+10px = 0.625rem = h6, 10.72px
+12px = 0.75rem
+14px = 0.875rem = h5, 13.28px
+16px = 1rem = base/body/h4
+18px = 1.125rem = h3, 18.72px
+20px = 1.25rem
+22px = 1.375rem
+24px = 1.5rem = h2
+26px = 1.625rem
+30px = 1.875rem
+32px = 2rem = h1
+
+*/
