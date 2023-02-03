@@ -1,18 +1,22 @@
 "use strict";
 
-// const rockBtn = document.querySelector("button.rock");
-// const paperBtn = document.querySelector("button.paper");
-// const scisBtn = document.querySelector("button.scissors");
-
 const buttons = document.querySelectorAll("button");
+const resultDiv = document.querySelector("div.result");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    playSingleRound(e.target.textContent, getComputerChoice());
-    updateScore();
+    const playerChoice = e.target.textContent;
+    const computerChoice = getComputerChoice();
+    const roundResult = playSingleRound(playerChoice, computerChoice);
+
+    resultDiv.textContent = roundResult;
+    updateScore(roundResult);
+    const winner = checkForWinner();
+    if (winner) {
+      displayWinner(winner);
+    }
   })
 });
-
 
 /*
 Generate and return a new computer choice - rock, paper, or scissors
@@ -25,15 +29,12 @@ function getComputerChoice() {
   : console.log("error");
 }
 
-
 /*
 Evaluate a single round of rock paper scissors and display win/lose result
 */
-const displayDiv = document.querySelector("div.display");
-
 function playSingleRound(playerSelection, computerSelection) {
   let playerSelectionLC = playerSelection.toLowerCase();
-  displayDiv.textContent = (playerSelectionLC === computerSelection) ? "It's a tie! Try again"
+  return (playerSelectionLC === computerSelection) ? "It's a tie! Try again"
   : (playerSelectionLC === "rock" && computerSelection === "scissors") ? "You win! Rock beats Scissors"
   : (playerSelectionLC === "paper" && computerSelection === "rock") ? "You win! Paper beats Rock"
   : (playerSelectionLC === "scissors" && computerSelection === "paper") ? "You win! Scissors beats Paper"
@@ -43,32 +44,42 @@ function playSingleRound(playerSelection, computerSelection) {
   : console.log("error");
 }
 
-
 /*
-track and display score
+Track and display score
 */
 let playerScore = 0;
 let computerScore = 0;
 
 const playerScoreBoard = document.querySelector("div.player > p");
 const computerScoreBoard = document.querySelector("div.computer > p");
-const displayFinal = document.querySelector("div.final-result");
 
-function updateScore() {
-  let roundResult = displayDiv.textContent;
-  if (roundResult.includes("win")) {
+function updateScore(roundResultP) {
+  if (roundResultP.includes("win")) {
     playerScore++;
     playerScoreBoard.textContent = playerScore;
-  } else if (roundResult.includes("lose")) {
+  } else if (roundResultP.includes("lose")) {
     computerScore++;
     computerScoreBoard.textContent = computerScore;
   }
-  if (playerScore === 3) displayFinal.textContent = "YOU WON"
-  else if (computerScore === 3) displayFinal.textContent = "YOU LOST"
 }
 
+/*
+Check for a winner
+*/
+function checkForWinner() {
+  if (playerScore === 3) return "player"
+  else if (computerScore === 3) return "computer"
+}
 
+/*
+Display winner
+*/
+const winnerDiv = document.querySelector("div.winner");
 
+function displayWinner(winnerP) {
+  if (winnerP === "player") winnerDiv.textContent = "YOU WON"
+  else if (winnerP === "computer") winnerDiv.textContent = "YOU LOST"
+}
 
 
 
