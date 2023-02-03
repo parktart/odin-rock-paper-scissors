@@ -91,9 +91,20 @@ function addResetBtn() {
   resetBtn.style.display = "block";
 }
 
+/*
+Reset
+*/
+resetBtn.addEventListener("click", reset);
 
-
-// addResetBtn();
+function reset() {
+  playerScore = 0;
+  playerScoreBoard.textContent = playerScore;
+  computerScore = 0;
+  computerScoreBoard.textContent = computerScore;
+  resultDiv.textContent = "Choose your weapon!";
+  winnerDiv.textContent = "";
+  resetBtn.style.display = "none";
+}
 
 
 
