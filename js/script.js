@@ -52,6 +52,7 @@ let computerScore = 0;
 
 const playerScoreBoard = document.querySelector("div.player > p");
 const computerScoreBoard = document.querySelector("div.computer > p");
+const displayFinal = document.querySelector("div.final-result");
 
 function updateScore() {
   let roundResult = displayDiv.textContent;
@@ -62,8 +63,8 @@ function updateScore() {
     computerScore++;
     computerScoreBoard.textContent = computerScore;
   }
-  if (playerScore === 5) return "YOU WON"
-  else if (computerScore === 5) return "YOU LOST"
+  if (playerScore === 3) displayFinal.textContent = "YOU WON"
+  else if (computerScore === 3) displayFinal.textContent = "YOU LOST"
 }
 
 

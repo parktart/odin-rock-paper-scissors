@@ -72,6 +72,7 @@ button {
 
 .score.wrap {
   border: 2px solid blue;
+  margin-bottom: 30px;
 }
 
 .score.wrap > div {
@@ -81,4 +82,10 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.final-result.wrap {
+  border: 2px solid orange;  
+  font-size: 20px;
+  font-weight: bold;
 }
