@@ -62,7 +62,7 @@ button:active {
   gap: 20px;
 }
 
-button {
+.buttons > button {
   width: 120px;
 }
 
@@ -86,6 +86,10 @@ button {
 .winner.wrap {
   font-size: 1.25rem; /* 20px */
   font-weight: bold;
+}
+
+.reset > button {
+  display: none;
 }
 
 

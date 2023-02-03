@@ -1,6 +1,6 @@
 "use strict";
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".buttons > button");
 const resultDiv = document.querySelector("div.result");
 
 buttons.forEach((button) => {
@@ -14,6 +14,7 @@ buttons.forEach((button) => {
     const winner = checkForWinner();
     if (winner) {
       displayWinner(winner);
+      addResetBtn();
     }
   })
 });
@@ -80,6 +81,20 @@ function displayWinner(winnerP) {
   if (winnerP === "player") winnerDiv.textContent = "YOU WON"
   else if (winnerP === "computer") winnerDiv.textContent = "YOU LOST"
 }
+
+/*
+Add reset button
+*/
+const resetBtn = document.querySelector(".reset > button");
+
+function addResetBtn() {
+  resetBtn.style.display = "block";
+}
+
+
+
+// addResetBtn();
+
 
 
 
