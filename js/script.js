@@ -31,7 +31,7 @@ function getComputerChoice() {
 }
 
 /*
-Evaluate a single round of rock paper scissors and display win/lose result
+Evaluate a single round of rock paper scissors and return win/lose result
 */
 function playSingleRound(playerSelection, computerSelection) {
   let playerSelectionLC = playerSelection.toLowerCase();

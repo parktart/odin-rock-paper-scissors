@@ -41,7 +41,7 @@ button:active {
 }
 
 .margin-auto-container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   max-width: 1200px;
   min-height: 100vh;
   margin: 0 auto;
@@ -53,7 +53,7 @@ button:active {
 }
 
 .wrap {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   display: flex;
   margin-bottom: 30px;
 }
@@ -75,7 +75,7 @@ button:active {
 }
 
 .score.wrap > div {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 150px;
   text-align: center;
   display: flex;
