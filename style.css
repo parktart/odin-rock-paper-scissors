@@ -107,12 +107,17 @@ button:active {
 
 .reset > button {
   padding: 20px;
+}
+
+.reset > button,
+.winner.wrap {
   transition: opacity 2s ease;
   visibility: hidden;
   opacity: 0;
 }
 
-.reset > button.visible {
+.reset > button.visible,
+.winner.wrap.visible {
   visibility: visible;
   opacity: 1;
 }

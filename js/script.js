@@ -93,6 +93,7 @@ const winnerDiv = document.querySelector("div.winner");
 function displayWinner(winnerP) {
   if (winnerP === "player") winnerDiv.textContent = "YOU WON"
   else if (winnerP === "computer") winnerDiv.textContent = "YOU LOST"
+  winnerDiv.classList.add("visible");
 }
 
 /*
@@ -101,9 +102,9 @@ Add reset button
 const resetBtn = document.querySelector(".reset > button");
 
 function addResetBtn() {
+  // ADD A DELAY HERE
   resetBtn.classList.add("visible")
 }
-
 
 /*
 Reset
@@ -116,7 +117,8 @@ function reset() {
   computerScore = 0;
   computerScoreBoard.textContent = computerScore;
   resultDiv.textContent = "Choose your weapon!";
-  winnerDiv.textContent = "";
+  // winnerDiv.textContent = "";
+  winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
   addListeners();
 }
