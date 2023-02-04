@@ -28,7 +28,7 @@ function addInitialListeners() {
 }
 
 function initialSetup() {
-  // arenaDiv.classList.add("visible");
+  arenaDiv.classList.add("visible");
   arenaDiv.classList.add("full-height");
   // event listener to wait for transitionend 
   // (arena built) before continuing here
