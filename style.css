@@ -58,9 +58,17 @@ a:hover {
 }
 
 .arena.wrap {
-  margin: 16px 0 24px 0;
+  margin: 12px 0 24px 0;
   border: 2px solid white;
   width: 100%;
+  visibility: hidden;
+  transition: height 1.5s ease;
+  height: 0px;
+}
+
+.arena.wrap.full-height {
+  visibility: visible;
+  height: 200px;
 }
 
 .buttons.wrap {
@@ -117,7 +125,7 @@ button:active {
 
 .reset > button,
 .winner.wrap,
-.arena.wrap,
+/* .arena.wrap, */
 .result.wrap,
 .score.wrap {
   transition: opacity 2s ease;
@@ -127,7 +135,7 @@ button:active {
 
 .reset > button.visible,
 .winner.wrap.visible,
-.arena.wrap.visible,
+/* .arena.wrap.visible, */
 .result.wrap.visible,
 .score.wrap.visible {
   visibility: visible;

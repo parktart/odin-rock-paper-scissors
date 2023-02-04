@@ -28,10 +28,10 @@ function addInitialListeners() {
 }
 
 function initialSetup() {
-  arenaDiv.classList.add("visible");
-  // arena height grow
+  // arenaDiv.classList.add("visible");
+  arenaDiv.classList.add("full-height");
   // event listener to wait for transitionend 
-  // (arena built) before proceding here
+  // (arena built) before continuing here
   resultDiv.classList.add("visible");
   scoreDiv.classList.add("visible");
   removeInitialListeners();
@@ -129,7 +129,7 @@ Add reset button
 const resetBtn = document.querySelector(".reset > button");
 
 function addResetBtn() {
-  // ADD A DELAY HERE
+  // ADD A DELAY HERE using transitionend event listener
   resetBtn.classList.add("visible")
 }
 
