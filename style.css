@@ -12,10 +12,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  /* color: rgb(42, 43, 42); */
   color: white;
-  background-color: black;
-  /* min-height: 100vh; */
 }
 
 img, picture, svg, video {
@@ -36,16 +33,9 @@ a:hover {
   opacity: 0.7;
 }
 
-button:active {
-  opacity: 0.5;
-}
-
 .margin-auto-container {
-  /* border: 2px solid red; */
-  max-width: 1200px;
+  background-image: linear-gradient(black, rgb(42, 43, 42));
   min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,22 +43,45 @@ button:active {
 }
 
 .wrap {
-  /* border: 2px solid blue; */
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .title.wrap {
   font-family: 'Knewave', cursive;
   font-size: 48px;
+  margin-bottom: 0;
+}
+
+.arena.wrap {
+  margin: 16px 0 24px 0;
+  border: 2px solid white;
+  width: 20px;
 }
 
 .buttons.wrap {
-  gap: 20px;
+  gap: 40px;
+}
+
+button {
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px 2px white;
+  opacity: 0.8;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: rgb(41, 40, 40);
 }
 
 .buttons > button {
   width: 120px;
+  padding: 20px 0;
 }
 
 .result.wrap {
@@ -80,7 +93,6 @@ button:active {
 }
 
 .score.wrap > div {
-  /* border: 2px solid red; */
   width: 150px;
   text-align: center;
   display: flex;
@@ -94,12 +106,29 @@ button:active {
 }
 
 .reset > button {
-  display: none;
+  padding: 20px;
+  transition: opacity 2s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.reset > button.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 
 
 
+
+.margin-auto-container,
+.score.wrap > div {
+  /* border: 2px solid red; */
+}
+
+.wrap {
+  /* border: 2px solid blue; */
+}
 
 /* CSS text-shadow
 	text-shadow: 3px 3px 1px #bebebe;

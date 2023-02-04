@@ -101,8 +101,9 @@ Add reset button
 const resetBtn = document.querySelector(".reset > button");
 
 function addResetBtn() {
-  resetBtn.style.display = "block";
+  resetBtn.classList.add("visible")
 }
+
 
 /*
 Reset
@@ -116,7 +117,7 @@ function reset() {
   computerScoreBoard.textContent = computerScore;
   resultDiv.textContent = "Choose your weapon!";
   winnerDiv.textContent = "";
-  resetBtn.style.display = "none";
+  resetBtn.classList.remove("visible");
   addListeners();
 }
 
