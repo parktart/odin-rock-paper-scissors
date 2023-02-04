@@ -1,7 +1,9 @@
 "use strict";
 
 const buttons = document.querySelectorAll(".buttons > button");
+const arenaDiv = document.querySelector("div.arena");
 const resultDiv = document.querySelector("div.result");
+const scoreDiv = document.querySelector("div.score");
 
 addListeners();
 
@@ -16,6 +18,31 @@ function removeListeners() {
     button.removeEventListener("click", playSingleRound);
   });
 }
+
+addInitialListeners();
+
+function addInitialListeners() {
+  buttons.forEach((button) => {
+    button.addEventListener("click", initialSetup)
+  });
+}
+
+function initialSetup() {
+  arenaDiv.classList.add("visible");
+  // arena height grow
+  // event listener to wait for transitionend 
+  // (arena built) before proceding here
+  resultDiv.classList.add("visible");
+  scoreDiv.classList.add("visible");
+  removeInitialListeners();
+}
+
+function removeInitialListeners() {
+  buttons.forEach((button) => {
+    button.removeEventListener("click", initialSetup);
+  });
+}
+
 
 function playSingleRound(e) {
   const playerChoice = e.target.textContent;

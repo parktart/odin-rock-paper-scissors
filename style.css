@@ -13,6 +13,7 @@
 body {
   font-family: 'Arial', sans-serif;
   color: white;
+  background-image: linear-gradient(black, rgb(42, 43, 42));
 }
 
 img, picture, svg, video {
@@ -34,8 +35,11 @@ a:hover {
 }
 
 .margin-auto-container {
-  background-image: linear-gradient(black, rgb(42, 43, 42));
+  border: 2px solid red;
   min-height: 100vh;
+  max-width: 470px;
+  margin: 0 auto;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,11 +60,12 @@ a:hover {
 .arena.wrap {
   margin: 16px 0 24px 0;
   border: 2px solid white;
-  width: 20px;
+  width: 100%;
 }
 
 .buttons.wrap {
-  gap: 40px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 button {
@@ -90,6 +95,7 @@ button:active {
 
 .score.wrap {
   /* margin-bottom: XXX; */
+  border: 2px solid red;
 }
 
 .score.wrap > div {
@@ -110,14 +116,20 @@ button:active {
 }
 
 .reset > button,
-.winner.wrap {
+.winner.wrap,
+.arena.wrap,
+.result.wrap,
+.score.wrap {
   transition: opacity 2s ease;
   visibility: hidden;
   opacity: 0;
 }
 
 .reset > button.visible,
-.winner.wrap.visible {
+.winner.wrap.visible,
+.arena.wrap.visible,
+.result.wrap.visible,
+.score.wrap.visible {
   visibility: visible;
   opacity: 1;
 }
