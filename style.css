@@ -143,7 +143,19 @@ button:active {
 }
 
 .arena > img {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  transition: width 1s ease;
+  /* visibility: hidden; */
+  display: none;
+  width: 0%;
+}
+
+.arena > img.visible {
+  /* visibility: visible; */
+  display: block;
+}
+
+.arena > img.full-width {
   width: 25%;
 }
 

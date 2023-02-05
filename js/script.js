@@ -43,11 +43,17 @@ function removeInitialListeners() {
   });
 }
 
-
 function playSingleRound(e) {
   const playerChoice = e.target.textContent;
   const computerChoice = getComputerChoice();
   const roundResult = getRoundResult(playerChoice, computerChoice);
+  
+  displayImg(playerChoice, computerChoice);
+
+  var delayInMilliseconds = 1;
+  setTimeout(function() {
+    makeImgFullWidth(playerChoice, computerChoice);
+  }, delayInMilliseconds);
 
   resultDiv.textContent = roundResult;
   updateScore(roundResult);
@@ -83,6 +89,74 @@ function getRoundResult(playerSelection, computerSelection) {
   : (computerSelection === "paper" && playerSelectionLC === "rock") ? "You lose! Paper beats Rock"
   : (computerSelection === "scissors" && playerSelectionLC === "paper") ? "You lose! Scissors beats Paper"
   : console.log("error");
+}
+
+/*
+Display arena images
+*/
+const playerRockImg = document.querySelector(".arena > img:nth-child(1)")
+const playerPaperImg = document.querySelector(".arena > img:nth-child(2)")
+const playerScissorsImg = document.querySelector(".arena > img:nth-child(3)")
+const computerRockImg = document.querySelector(".arena > img:nth-child(4)")
+const computerPaperImg = document.querySelector(".arena > img:nth-child(5)")
+const computerScissorsImg = document.querySelector(".arena > img:nth-child(6)")
+
+function displayImg(playerChoiceP, computerChoiceP) {
+  if (playerChoiceP === "ROCK") {
+    playerRockImg.classList.add("visible");
+    playerPaperImg.classList.remove("visible");
+    playerScissorsImg.classList.remove("visible");
+  } else if (playerChoiceP === "PAPER") {
+    playerRockImg.classList.remove("visible");
+    playerPaperImg.classList.add("visible");
+    playerScissorsImg.classList.remove("visible");
+  } else if (playerChoiceP === "SCISSORS") {
+    playerRockImg.classList.remove("visible");
+    playerPaperImg.classList.remove("visible");
+    playerScissorsImg.classList.add("visible");
+  }
+  if (computerChoiceP === "rock") {
+    computerRockImg.classList.add("visible");
+    computerPaperImg.classList.remove("visible");
+    computerScissorsImg.classList.remove("visible");
+  } else if (computerChoiceP === "paper") {
+    computerRockImg.classList.remove("visible");
+    computerPaperImg.classList.add("visible");
+    computerScissorsImg.classList.remove("visible");
+  } else if (computerChoiceP === "scissors") {
+    computerRockImg.classList.remove("visible");
+    computerPaperImg.classList.remove("visible");
+    computerScissorsImg.classList.add("visible");
+  }
+}
+
+function makeImgFullWidth(playerChoiceP, computerChoiceP) {
+  if (playerChoiceP === "ROCK") {
+    playerRockImg.classList.add("full-width");
+    playerPaperImg.classList.remove("full-width");
+    playerScissorsImg.classList.remove("full-width");
+  } else if (playerChoiceP === "PAPER") {
+    playerRockImg.classList.remove("full-width");
+    playerPaperImg.classList.add("full-width");
+    playerScissorsImg.classList.remove("full-width");
+  } else if (playerChoiceP === "SCISSORS") {
+    playerRockImg.classList.remove("full-width");
+    playerPaperImg.classList.remove("full-width");
+    playerScissorsImg.classList.add("full-width");
+  }
+  if (computerChoiceP === "rock") {
+    computerRockImg.classList.add("full-width");
+    computerPaperImg.classList.remove("full-width");
+    computerScissorsImg.classList.remove("full-width");
+  } else if (computerChoiceP === "paper") {
+    computerRockImg.classList.remove("full-width");
+    computerPaperImg.classList.add("full-width");
+    computerScissorsImg.classList.remove("full-width");
+  } else if (computerChoiceP === "scissors") {
+    computerRockImg.classList.remove("full-width");
+    computerPaperImg.classList.remove("full-width");
+    computerScissorsImg.classList.add("full-width");
+  }
 }
 
 /*
