@@ -35,7 +35,7 @@ a:hover {
 }
 
 .margin-auto-container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   min-height: 100vh;
   max-width: 470px;
   margin: 0 auto;
@@ -54,6 +54,7 @@ a:hover {
 .title.wrap {
   font-family: 'Knewave', cursive;
   font-size: 48px;
+  margin-top: 30px;
   margin-bottom: 0;
 }
 
@@ -89,7 +90,7 @@ button:active {
 
 .score.wrap {
   /* margin-bottom: XXX; */
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .score.wrap > div {
@@ -139,6 +140,21 @@ button:active {
 .arena.wrap.full-height {
   height: 200px;
 }
+
+@media screen and (max-width: 470px) {
+
+  .title.wrap {
+    font-size: 36px;
+  }
+
+  .buttons > button {
+    width: 100px;
+    padding: 20px 0;
+  }
+
+}
+
+
 
 
 
