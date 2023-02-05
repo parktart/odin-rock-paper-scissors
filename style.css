@@ -130,6 +130,7 @@ button:active {
 }
 
 .arena.wrap {
+  justify-content: space-around;
   margin: 12px 0 24px 0;
   border: 2px solid white;
   width: 100%;
@@ -139,6 +140,11 @@ button:active {
 
 .arena.wrap.full-height {
   height: 200px;
+}
+
+.arena > img {
+  border: 2px solid red;
+  width: 25%;
 }
 
 @media screen and (max-width: 470px) {
@@ -153,6 +159,8 @@ button:active {
   }
 
 }
+
+
 
 
 
