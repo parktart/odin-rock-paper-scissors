@@ -222,6 +222,18 @@ function reset() {
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
   addListeners();
+  playerRockImg.classList.remove("visible");
+  playerPaperImg.classList.remove("visible");
+  playerScissorsImg.classList.remove("visible");
+  playerRockImg.classList.remove("full-width");
+  playerPaperImg.classList.remove("full-width");
+  playerScissorsImg.classList.remove("full-width");
+  computerRockImg.classList.remove("visible");
+  computerPaperImg.classList.remove("visible");
+  computerScissorsImg.classList.remove("visible");
+  computerRockImg.classList.remove("full-width");
+  computerPaperImg.classList.remove("full-width");
+  computerScissorsImg.classList.remove("full-width");
 }
 
 
