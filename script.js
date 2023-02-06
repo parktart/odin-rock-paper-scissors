@@ -199,9 +199,13 @@ Display winner
 const winnerDiv = document.querySelector("div.winner");
 
 function displayWinner(winnerP) {
-  if (winnerP === "player") winnerDiv.textContent = "YOU WON"
-  else if (winnerP === "computer") winnerDiv.textContent = "YOU LOST"
-  
+  if (winnerP === "player") {
+    winnerDiv.textContent = "YOU WON";
+    winnerDiv.style.color = "green";
+  } else if (winnerP === "computer") {
+    winnerDiv.textContent = "YOU LOST"
+    winnerDiv.style.color = "red";
+  }
   resetWinnerDiv();
   setTimeout(makeWinnerVisible, 1); // 1 millisecond
   setTimeout(makeWinnerBig, 50); // 50 milliseconds
@@ -247,6 +251,7 @@ function reset() {
   resetBtn.classList.remove("visible");
   addRoundListeners();
   // resetImg();
+  winnerDiv.style.color = "white";
 }
 
 
