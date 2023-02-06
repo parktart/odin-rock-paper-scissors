@@ -30,7 +30,7 @@ function addInitialListeners() {
 function initialSetup() {
   arenaDiv.classList.add("visible");
   arenaDiv.classList.add("full-height");
-  // event listener to wait for transitionend 
+  // event listener to wait for transitionend
   // (arena built) before continuing here
   resultDiv.classList.add("visible");
   scoreDiv.classList.add("visible");
@@ -44,7 +44,7 @@ function removeInitialListeners() {
 }
 
 function playSingleRound(e) {
-  const playerChoice = e.target.textContent;
+  const playerChoice = e.target.textContent.toLowerCase();
   const computerChoice = getComputerChoice();
   const roundResult = getRoundResult(playerChoice, computerChoice);
   
@@ -78,15 +78,14 @@ function getComputerChoice() {
 /*
 Evaluate a single round of rock paper scissors and return win/lose result
 */
-function getRoundResult(playerSelection, computerSelection) {
-  let playerSelectionLC = playerSelection.toLowerCase();
-  return (playerSelectionLC === computerSelection) ? "It's a tie! Try again"
-  : (playerSelectionLC === "rock" && computerSelection === "scissors") ? "You win! Rock beats Scissors"
-  : (playerSelectionLC === "paper" && computerSelection === "rock") ? "You win! Paper beats Rock"
-  : (playerSelectionLC === "scissors" && computerSelection === "paper") ? "You win! Scissors beats Paper"
-  : (computerSelection === "rock" && playerSelectionLC === "scissors") ? "You lose! Rock beats Scissors"
-  : (computerSelection === "paper" && playerSelectionLC === "rock") ? "You lose! Paper beats Rock"
-  : (computerSelection === "scissors" && playerSelectionLC === "paper") ? "You lose! Scissors beats Paper"
+function getRoundResult(playerChoiceP, computerChoiceP) {
+  return (playerChoiceP === computerChoiceP) ? "It's a tie! Try again"
+  : (playerChoiceP === "rock" && computerChoiceP === "scissors") ? "You win! Rock beats Scissors"
+  : (playerChoiceP === "paper" && computerChoiceP === "rock") ? "You win! Paper beats Rock"
+  : (playerChoiceP === "scissors" && computerChoiceP === "paper") ? "You win! Scissors beats Paper"
+  : (computerChoiceP === "rock" && playerChoiceP === "scissors") ? "You lose! Rock beats Scissors"
+  : (computerChoiceP === "paper" && playerChoiceP === "rock") ? "You lose! Paper beats Rock"
+  : (computerChoiceP === "scissors" && playerChoiceP === "paper") ? "You lose! Scissors beats Paper"
   : console.log("error");
 }
 
@@ -101,15 +100,15 @@ const computerPaperImg = document.querySelector(".arena > img:nth-child(5)")
 const computerScissorsImg = document.querySelector(".arena > img:nth-child(6)")
 
 function displayImg(playerChoiceP, computerChoiceP) {
-  if (playerChoiceP === "ROCK") {
+  if (playerChoiceP === "rock") {
     playerRockImg.classList.add("visible");
     playerPaperImg.classList.remove("visible");
     playerScissorsImg.classList.remove("visible");
-  } else if (playerChoiceP === "PAPER") {
+  } else if (playerChoiceP === "paper") {
     playerRockImg.classList.remove("visible");
     playerPaperImg.classList.add("visible");
     playerScissorsImg.classList.remove("visible");
-  } else if (playerChoiceP === "SCISSORS") {
+  } else if (playerChoiceP === "scissors") {
     playerRockImg.classList.remove("visible");
     playerPaperImg.classList.remove("visible");
     playerScissorsImg.classList.add("visible");
@@ -130,15 +129,15 @@ function displayImg(playerChoiceP, computerChoiceP) {
 }
 
 function makeImgFullWidth(playerChoiceP, computerChoiceP) {
-  if (playerChoiceP === "ROCK") {
+  if (playerChoiceP === "rock") {
     playerRockImg.classList.add("full-width");
     playerPaperImg.classList.remove("full-width");
     playerScissorsImg.classList.remove("full-width");
-  } else if (playerChoiceP === "PAPER") {
+  } else if (playerChoiceP === "paper") {
     playerRockImg.classList.remove("full-width");
     playerPaperImg.classList.add("full-width");
     playerScissorsImg.classList.remove("full-width");
-  } else if (playerChoiceP === "SCISSORS") {
+  } else if (playerChoiceP === "scissors") {
     playerRockImg.classList.remove("full-width");
     playerPaperImg.classList.remove("full-width");
     playerScissorsImg.classList.add("full-width");
