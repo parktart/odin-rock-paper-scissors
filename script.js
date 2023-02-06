@@ -32,7 +32,6 @@ function initialSetup() {
   arenaDiv.classList.add("full-height");
   // event listener to wait for transitionend
   // (arena built) before continuing here
-  resultDiv.classList.add("visible");
   scoreDiv.classList.add("visible");
   removeInitialListeners();
 }
@@ -42,6 +41,13 @@ function removeInitialListeners() {
     button.removeEventListener("click", initialSetup);
   });
 }
+
+function showResultDiv() {
+  resultDiv.classList.add("visible");
+}
+ // delay initial message by 1 second
+ setTimeout(showResultDiv, 1000);
+
 
 function playSingleRound(e) {
   const playerChoice = e.target.textContent.toLowerCase();
