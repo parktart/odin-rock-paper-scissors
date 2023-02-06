@@ -30,8 +30,6 @@ function addInitialListeners() {
 function initialSetup() {
   arenaDiv.classList.add("visible");
   arenaDiv.classList.add("full-height");
-  // event listener to wait for transitionend
-  // (arena built) before continuing here
   scoreDiv.classList.add("visible");
   removeInitialListeners();
 }
@@ -42,17 +40,24 @@ function removeInitialListeners() {
   });
 }
 
+setTimeout(showResultDiv, 1000);
+// delay initial message by 1 second
 function showResultDiv() {
   resultDiv.classList.add("visible");
 }
- // delay initial message by 1 second
- setTimeout(showResultDiv, 1000);
+
+function hideResultDiv() {
+  resultDiv.classList.remove("visible");
+}
 
 
 function playSingleRound(e) {
   const playerChoice = e.target.textContent.toLowerCase();
   const computerChoice = getComputerChoice();
   const roundResult = getRoundResult(playerChoice, computerChoice);
+  
+  hideResultDiv();
+  resultDiv.textContent = roundResult;
   
   resetImg();
 
@@ -64,8 +69,10 @@ function playSingleRound(e) {
   setTimeout(makeImgFullWidth, 50, playerChoice, computerChoice);
   // needed for transition from displayImg to be recognized
 
-  resultDiv.textContent = roundResult;
+  setTimeout(showResultDiv, 800);
+
   updateScore(roundResult);
+
   const winner = checkForWinner();
   if (winner) {
     removeRoundListeners();
@@ -74,6 +81,8 @@ function playSingleRound(e) {
 }
 
 function endGame(winner) {
+  // hideResultDiv();
+  resultDiv.style.display = "none";
   resetImg();
   displayWinner(winner);
   addResetBtn();
@@ -231,7 +240,8 @@ function reset() {
   playerScoreBoard.textContent = playerScore;
   computerScore = 0;
   computerScoreBoard.textContent = computerScore;
-  resultDiv.textContent = "";
+  resultDiv.textContent = "Choose your weapon to begin best of 5 rounds!";
+  resultDiv.style.display = "block";
   // winnerDiv.textContent = "";
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
