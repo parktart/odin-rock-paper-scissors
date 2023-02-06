@@ -175,8 +175,8 @@ function updateScore(roundResultP) {
 Check for a winner
 */
 function checkForWinner() {
-  if (playerScore === 5) return "player"
-  else if (computerScore === 5) return "computer"
+  if (playerScore === 3) return "player"
+  else if (computerScore === 3) return "computer"
 }
 
 /*
