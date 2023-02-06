@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Acme', 'Arial', sans-serif;
   color: white;
   background-image: linear-gradient(black, rgb(42, 43, 42));
 }
