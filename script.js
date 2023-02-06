@@ -81,7 +81,6 @@ function playSingleRound(e) {
 }
 
 function endGame(winner) {
-  // hideResultDiv();
   resultDiv.style.display = "none";
   resetImg();
   displayWinner(winner);
@@ -199,6 +198,7 @@ Display winner
 const winnerDiv = document.querySelector("div.winner");
 
 function displayWinner(winnerP) {
+  resetWinnerDiv();
   if (winnerP === "player") {
     winnerDiv.textContent = "YOU WON";
     winnerDiv.style.color = "green";
@@ -206,7 +206,6 @@ function displayWinner(winnerP) {
     winnerDiv.textContent = "YOU LOST"
     winnerDiv.style.color = "red";
   }
-  resetWinnerDiv();
   setTimeout(makeWinnerVisible, 1); // 1 millisecond
   setTimeout(makeWinnerBig, 50); // 50 milliseconds
 }
@@ -230,7 +229,6 @@ Add reset button
 const resetBtn = document.querySelector(".reset > button");
 
 function addResetBtn() {
-  // ADD A DELAY HERE using transitionend event listener
   resetBtn.classList.add("visible")
 }
 
@@ -244,16 +242,15 @@ function reset() {
   playerScoreBoard.textContent = playerScore;
   computerScore = 0;
   computerScoreBoard.textContent = computerScore;
-  resultDiv.textContent = "Choose your weapon to begin best of 5 rounds!";
+  resultDiv.textContent = resultDivInitial;
   resultDiv.style.display = "block";
-  // winnerDiv.textContent = "";
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
   addRoundListeners();
-  // resetImg();
   winnerDiv.style.color = "white";
 }
 
+const resultDivInitial = resultDiv.textContent;
 
 
 
