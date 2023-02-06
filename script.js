@@ -1,20 +1,20 @@
 "use strict";
 
-const buttons = document.querySelectorAll(".buttons > button");
+const threeButtons = document.querySelectorAll(".buttons > button");
 const arenaDiv = document.querySelector("div.arena");
 const resultDiv = document.querySelector("div.result");
 const scoreDiv = document.querySelector("div.score");
 
-addListeners();
+addRoundListeners();
 
-function addListeners() {
-  buttons.forEach((button) => {
+function addRoundListeners() {
+  threeButtons.forEach((button) => {
     button.addEventListener("click", playSingleRound)
   });
 }
 
-function removeListeners() {
-  buttons.forEach((button) => {
+function removeRoundListeners() {
+  threeButtons.forEach((button) => {
     button.removeEventListener("click", playSingleRound);
   });
 }
@@ -22,7 +22,7 @@ function removeListeners() {
 addInitialListeners();
 
 function addInitialListeners() {
-  buttons.forEach((button) => {
+  threeButtons.forEach((button) => {
     button.addEventListener("click", initialSetup)
   });
 }
@@ -38,7 +38,7 @@ function initialSetup() {
 }
 
 function removeInitialListeners() {
-  buttons.forEach((button) => {
+  threeButtons.forEach((button) => {
     button.removeEventListener("click", initialSetup);
   });
 }
@@ -60,7 +60,7 @@ function playSingleRound(e) {
   if (winner) {
     displayWinner(winner);
     addResetBtn();
-    removeListeners();
+    removeRoundListeners();
   }
 }
 
@@ -219,7 +219,7 @@ function reset() {
   // winnerDiv.textContent = "";
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
-  addListeners();
+  addRoundListeners();
   playerRockImg.classList.remove("visible");
   playerPaperImg.classList.remove("visible");
   playerScissorsImg.classList.remove("visible");
