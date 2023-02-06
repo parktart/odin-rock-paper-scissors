@@ -101,17 +101,12 @@ button:active {
   gap: 10px;
 }
 
-.winner.wrap {
-  font-size: 1.25rem; /* 20px */
-  font-weight: bold;
-}
-
 .reset > button {
   padding: 20px;
 }
 
 .reset > button,
-.winner.wrap,
+/* .winner.wrap, */
 .arena.wrap,
 .result.wrap,
 .score.wrap {
@@ -121,7 +116,7 @@ button:active {
 }
 
 .reset > button.visible,
-.winner.wrap.visible,
+/* .winner.wrap.visible, */
 .arena.wrap.visible,
 .result.wrap.visible,
 .score.wrap.visible {
@@ -158,6 +153,22 @@ button:active {
 .arena > img.full-width {
   width: 25%;
 }
+
+.winner.wrap {
+  transition: font-size 1s ease;
+  display: none;
+  font-size: 0px;
+  /* font-weight: bold; */
+}
+
+.winner.wrap.visible {
+  display: block;
+}
+
+.winner.wrap.full-font {
+  font-size: 48px;
+}
+
 
 @media screen and (max-width: 470px) {
 

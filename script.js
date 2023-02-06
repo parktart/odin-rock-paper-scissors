@@ -68,10 +68,15 @@ function playSingleRound(e) {
   updateScore(roundResult);
   const winner = checkForWinner();
   if (winner) {
-    displayWinner(winner);
-    addResetBtn();
     removeRoundListeners();
+    setTimeout(endGame, 2000, winner); // 2 seconds
   }
+}
+
+function endGame(winner) {
+  resetImg();
+  displayWinner(winner);
+  addResetBtn();
 }
 
 /*
@@ -187,8 +192,24 @@ const winnerDiv = document.querySelector("div.winner");
 function displayWinner(winnerP) {
   if (winnerP === "player") winnerDiv.textContent = "YOU WON"
   else if (winnerP === "computer") winnerDiv.textContent = "YOU LOST"
+  
+  resetWinnerDiv();
+  setTimeout(makeWinnerVisible, 1); // 1 millisecond
+  setTimeout(makeWinnerBig, 50); // 50 milliseconds
+}
+
+function resetWinnerDiv() {
+  winnerDiv.classList.remove("visible", "full-font");
+}
+
+function makeWinnerVisible() {
   winnerDiv.classList.add("visible");
 }
+
+function makeWinnerBig() {
+  winnerDiv.classList.add("full-font");
+}
+
 
 /*
 Add reset button
@@ -215,7 +236,7 @@ function reset() {
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
   addRoundListeners();
-  resetImg();
+  // resetImg();
 }
 
 
