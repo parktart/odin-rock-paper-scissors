@@ -50,10 +50,9 @@ function playSingleRound(e) {
   
   displayImg(playerChoice, computerChoice);
 
-  var delayInMilliseconds = 1;
-  setTimeout(function() {
-    makeImgFullWidth(playerChoice, computerChoice);
-  }, delayInMilliseconds);
+  // delay execution of makeImgFullWidth(playerChoice,computerChoice) by 0 milliseconds
+  setTimeout(makeImgFullWidth, 0, playerChoice, computerChoice);
+  // needed for width transition to be recognized
 
   resultDiv.textContent = roundResult;
   updateScore(roundResult);
