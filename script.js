@@ -49,11 +49,14 @@ function playSingleRound(e) {
   const roundResult = getRoundResult(playerChoice, computerChoice);
   
   resetImg();
-  displayImg(playerChoice, computerChoice);
 
-  // delay execution of makeImgFullWidth(playerChoice,computerChoice) by 0 milliseconds
-  setTimeout(makeImgFullWidth, 0, playerChoice, computerChoice);
-  // needed for width transition to be recognized
+  // delay execution of displayImg(playerChoice,computerChoice) by 1 milliseconds
+  setTimeout(displayImg, 1, playerChoice, computerChoice);
+  // needed for transition from resetImg to be recognized
+
+  // delay execution of makeImgFullWidth(playerChoice,computerChoice) by 50 milliseconds
+  setTimeout(makeImgFullWidth, 50, playerChoice, computerChoice);
+  // needed for transition from displayImg to be recognized
 
   resultDiv.textContent = roundResult;
   updateScore(roundResult);
