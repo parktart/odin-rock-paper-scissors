@@ -86,6 +86,7 @@ button:active {
 
 .result.wrap {
   font-size: 1.25rem; /* 20px */
+  text-align: center;
 }
 
 .score.wrap {
