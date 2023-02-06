@@ -35,7 +35,6 @@ a:hover {
 }
 
 .margin-auto-container {
-  /* border: 2px solid red; */
   min-height: 100vh;
   max-width: 470px;
   margin: 0 auto;
@@ -90,7 +89,6 @@ button:active {
 }
 
 .score.wrap {
-  /* margin-bottom: XXX; */
   /* border: 2px solid red; */
 }
 
@@ -107,7 +105,6 @@ button:active {
 }
 
 .reset > button,
-/* .winner.wrap, */
 .arena.wrap,
 .result.wrap,
 .score.wrap {
@@ -117,7 +114,6 @@ button:active {
 }
 
 .reset > button.visible,
-/* .winner.wrap.visible, */
 .arena.wrap.visible,
 .result.wrap.visible,
 .score.wrap.visible {
@@ -140,15 +136,12 @@ button:active {
 }
 
 .arena > img {
-  /* border: 2px solid red; */
-  transition: width 1s ease;
-  /* visibility: hidden; */
   display: none;
+  transition: width 1s ease;
   width: 0%;
 }
 
 .arena > img.visible {
-  /* visibility: visible; */
   display: block;
 }
 
@@ -157,10 +150,10 @@ button:active {
 }
 
 .winner.wrap {
-  transition: font-size 1s ease;
   display: none;
+  transition: font-size 1s ease;
   font-size: 0px;
-  /* font-weight: bold; */
+  font-weight: bold;
   margin-bottom: 0;
 }
 
