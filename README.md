@@ -1,5 +1,7 @@
 # odin-rock-paper-scissors
 
+Live: https://parktart.github.io/odin-rock-paper-scissors/
+
 A simple JavaScript program for rock paper scissors.
 
 The first JavaScript project in the Odin curriculum! Super excited to start coding some JavaScript after completing the *thorough* intro to JS by The Odin Project.
