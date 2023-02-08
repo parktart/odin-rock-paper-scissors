@@ -252,7 +252,6 @@ function reset() {
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
   addRoundListeners();
-  winnerDiv.style.color = "white";
 }
 
 const buttonsDivInitial = buttonsDiv.style.marginBottom;
