@@ -2,6 +2,7 @@
 
 const threeButtons = document.querySelectorAll(".buttons > button");
 const arenaDiv = document.querySelector("div.arena");
+const buttonsDiv = document.querySelector("div.buttons");
 const resultDiv = document.querySelector("div.result");
 const scoreDiv = document.querySelector("div.score");
 
@@ -81,7 +82,9 @@ function playSingleRound(e) {
 }
 
 function endGame(winner) {
-  resultDiv.style.display = "none";
+  hideResultDiv();
+  buttonsDiv.style.marginBottom = "0";
+  resultDiv.style.marginBottom = "8px";
   resetImg();
   displayWinner(winner);
   addResetBtn();
@@ -242,15 +245,19 @@ function reset() {
   playerScoreBoard.textContent = playerScore;
   computerScore = 0;
   computerScoreBoard.textContent = computerScore;
+  buttonsDiv.style.marginBottom = buttonsDivInitial;
   resultDiv.textContent = resultDivInitial;
-  resultDiv.style.display = "block";
+  resultDiv.style.marginBottom = resultDivInitMargin;
+  showResultDiv();
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
   addRoundListeners();
   winnerDiv.style.color = "white";
 }
 
+const buttonsDivInitial = buttonsDiv.style.marginBottom;
 const resultDivInitial = resultDiv.textContent;
+const resultDivInitMargin = resultDiv.style.marginBottom;
 
 
 
