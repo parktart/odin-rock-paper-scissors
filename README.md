@@ -1,16 +1,15 @@
 # odin-rock-paper-scissors
 
-Live: https://parktart.github.io/odin-rock-paper-scissors/
+Live preview: [Parktart Rock Paper Scissors](https://parktart.github.io/odin-rock-paper-scissors/)
 
-A simple JavaScript program for rock paper scissors.
+A simple JavaScript program to play rock paper scissors against a computer.
 
-The first JavaScript project in the Odin curriculum! Super excited to start coding some JavaScript after completing the *thorough* intro to JS by The Odin Project.
+The first JavaScript project in [The Odin Project](https://www.theodinproject.com/) Foundations! Super excited to start creating with JavaScript after completing the *thorough* intro to JS in the Odin curriculum.
 
 The program will be **vanilla** without any frameworks or additional libraries. 
 
 JavaScript lessons and fundamentals I hope to utilize:
 
-- Adding JS to HTML
 - Variables
 - Numbers
 - Operators
