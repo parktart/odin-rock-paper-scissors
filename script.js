@@ -70,7 +70,7 @@ function playSingleRound(e) {
   setTimeout(makeImgFullWidth, 50, playerChoice, computerChoice);
   // needed for transition from displayImg to be recognized
 
-  setTimeout(showResultDiv, 800);
+  setTimeout(showResultDiv, 500);
 
   updateScore(roundResult);
 
