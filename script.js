@@ -245,18 +245,18 @@ function reset() {
   playerScoreBoard.textContent = playerScore;
   computerScore = 0;
   computerScoreBoard.textContent = computerScore;
-  buttonsDiv.style.marginBottom = buttonsDivInitial;
-  resultDiv.textContent = resultDivInitial;
-  resultDiv.style.marginBottom = resultDivInitMargin;
+  buttonsDiv.style.marginBottom = butDivInitMargBot;
+  resultDiv.textContent = resultDivInitTextCont;
+  resultDiv.style.marginBottom = resultDivInitMargBot;
   showResultDiv();
   winnerDiv.classList.remove("visible");
   resetBtn.classList.remove("visible");
   addRoundListeners();
 }
 
-const buttonsDivInitial = buttonsDiv.style.marginBottom;
-const resultDivInitial = resultDiv.textContent;
-const resultDivInitMargin = resultDiv.style.marginBottom;
+const butDivInitMargBot = buttonsDiv.style.marginBottom;
+const resultDivInitTextCont = resultDiv.textContent;
+const resultDivInitMargBot = resultDiv.style.marginBottom;
 
 
 
