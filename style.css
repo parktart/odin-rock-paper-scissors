@@ -184,7 +184,25 @@ button:active {
 
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px; /* prevent overlap with Play Again button on mobile */
+  margin-bottom: 20px;
+}
 
+.reset.wrap {
+  margin-bottom: auto; /* push footer to bottom */
+}
+
+.footer a {
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  transform: rotate(360deg) scale(1.2);
+}
 
 
 
